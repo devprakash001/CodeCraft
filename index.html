@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft: Mobile Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>CodeCraft</h1>
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <main>
+        <div id="editorContainer">
+            <div class="editor">
+                <h2>HTML</h2>
+                <textarea id="htmlEditor" placeholder="Enter your HTML here..."></textarea>
+            </div>
+            <div class="editor">
+                <h2>CSS</h2>
+                <textarea id="cssEditor" placeholder="Enter your CSS here..."></textarea>
+            </div>
+            <div class="editor">
+                <h2>JavaScript</h2>
+                <textarea id="jsEditor" placeholder="Enter your JavaScript here..."></textarea>
+            </div>
+        </div>
+        <button id="runButton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Run Code
+        </button>
+        <div id="outputContainer">
+            <h2>Output</h2>
+            <iframe id="output"></iframe>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

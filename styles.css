@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --editor-bg: #f5f5f5;
+    --editor-text: #24292e;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --header-bg: #2c3e50;
+    --border-color: #e1e4e8;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--button-text);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.editor {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.editor:hover {
+    transform: translateY(-5px);
+}
+
+.editor h2 {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background-color: var(--editor-bg);
+    color: var(--editor-text);
+    border: none;
+    padding: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    resize: vertical;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#runButton {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#runButton svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#themeToggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--button-text);
+}
+
+#output {
+    width: 100%;
+    height: 300px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Dark theme */
+body.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --editor-bg: #2d2d2d;
+    --editor-text: #e1e1e1;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --header-bg: #333333;
+    --border-color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+    textarea {
+        height: 120px;
+    }
+
+    #output {
+        height: 200px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.editor, #runButton, #outputContainer {
+    animation: slideIn 0.5s ease forwards;
+}
+
+#output {
+    animation: fadeIn 0.5s ease forwards;
+}
